@@ -2,8 +2,9 @@
 FROM eclipse-mosquitto:2.0
 
 # Copy any custom configuration files if needed
-COPY ./config/mosquitto.conf /mosquitto/config/mosquitto.conf
-COPY . .
+COPY mosquitto.conf /mosquitto/config/mosquitto.conf
+COPY pwfile /mosquitto/config/pwfile
+COPY mosquitto.db /mosquitto/data/mosquitto.db
 
 # Expose the necessary ports
 EXPOSE 9001
